@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:id="@+id/main_layout" android:orientation="vertical"
+	android:background="?background">
+
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_alignParentTop="true"
+		android:layout_gravity="center_horizontal" android:id="@+id/TitleBar">
+		
+		<!-- Repeat Button -->
+		<ToggleButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/repeatButton"
+			android:background="@drawable/repeat_button"
+			android:layout_alignParentLeft="true" android:paddingTop="2dip"
+			android:textOn="" android:textOff="" android:paddingLeft="5dip">
+		</ToggleButton>
+
+		<!-- Shuffle Button -->
+		<ToggleButton android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/shuffleButton"
+			android:background="@drawable/shuffle_button"
+			android:layout_alignParentRight="true" android:padding="2dp"
+			android:textOn="" android:textOff="" android:gravity="center_vertical">
+		</ToggleButton>
+
+
+		<!-- Now Playing text -->
+		<TextView android:textAppearance="?LargeText"
+			android:layout_width="fill_parent"  android:layout_height="wrap_content"
+			android:text="@string/now_playing" android:id="@+id/tvNowPlaying"
+			android:layout_toRightOf="@id/repeatButton"
+			android:layout_toLeftOf="@id/shuffleButton" android:gravity="center_horizontal"
+			android:paddingLeft="5dip" android:paddingRight="5dip"
+			>
+		</TextView>
+
+		<!-- Song Count Text -->
+		<TextView android:textAppearance="?SmallText"
+			android:layout_width="fill_parent"  android:layout_height="wrap_content"
+			android:text="@string/song_count" android:id="@+id/SongCount"
+			android:layout_below="@id/tvNowPlaying" 
+			android:paddingTop="2dip" android:paddingBottom="5dip"
+			android:gravity="center_horizontal" >
+		</TextView>
+				
+		<!-- Cover Flow -->
+		<com.musicplayer.media.CoverFlow
+			android:id="@+id/coverflow" android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_below="@+id/SongCount"
+			android:paddingBottom="2dip" android:paddingTop="4dip"
+			android:layout_above="@+id/SongName" />
+
+	</RelativeLayout>
+	<!-- End of Title Bar -->
+
+
+	<!-- Control bar -->
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+		android:orientation="horizontal" android:layout_alignParentBottom="true"
+		android:id="@+id/ControlBar" android:layout_marginBottom="2dp"
+		android:gravity="center">
+
+		<!-- browse button -->
+		<ImageView android:layout_height="wrap_content"
+			android:scaleType="center" android:layout_width="wrap_content"
+			android:id="@+id/browse_button" android:layout_centerVertical="true"
+			android:layout_weight="1" android:layout_alignParentLeft="true"
+			android:src="@drawable/stop_disabled"></ImageView>
+
+		<!-- reverse button -->
+		<ImageView android:layout_height="65.32999dip"
+			android:layout_weight="1" android:src="@drawable/skipb_button"
+			android:layout_width="65.32999dip" android:id="@+id/reverse_button"
+			android:layout_centerVertical="true" android:background="?background_button_small"
+			android:scaleType="center">
+		</ImageView>
+
+		<!-- play/pause button -->
+		<ImageView android:layout_height="100dip"
+			android:background="?background_button_large" android:scaleType="center"
+			android:layout_weight="1" android:src="@drawable/play_button"
+			android:layout_width="100dip" android:id="@+id/play_button"
+			android:layout_centerVertical="true"></ImageView>
+
+		<!-- forward play -->
+		<ImageView android:layout_height="65.32999dip"
+			android:layout_weight="1" android:src="@drawable/skipf_button"
+			android:layout_width="65.32999dip" android:id="@+id/forward_button"
+			android:layout_centerVertical="true" android:background="?background_button_small"
+			android:scaleType="center"></ImageView>
+
+		<!-- playlist button -->
+		<ImageView android:layout_height="wrap_content"
+			android:scaleType="center" android:layout_weight="1"
+			android:layout_alignParentRight="true" android:layout_width="wrap_content"
+			android:layout_centerVertical="true" android:id="@+id/playlist_button"
+			android:src="@drawable/playlist_button"></ImageView>
+
+	</LinearLayout>
+	<!-- End of Control bar -->
+
+	<!-- Info Bar -->
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_above="@+id/ControlBar"
+		android:layout_gravity="center_horizontal" android:id="@+id/InfoBar">
+
+
+		<!-- Song Name Text -->
+		<TextView android:textAppearance="?MediumText" 
+			android:layout_width="fill_parent"  android:layout_height="wrap_content"
+			android:text="@string/song_name" android:id="@+id/SongName"
+			android:gravity="center_horizontal">
+		</TextView>
+
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_below="@+id/SongName"
+			android:layout_gravity="center_horizontal" android:id="@+id/StatusBar"
+			android:paddingTop="0dip" android:paddingBottom="2dip"
+			android:orientation="horizontal">
+
+			<!-- Played time -->
+			<TextView android:textAppearance="?SmallText" 
+				android:layout_width="30dp" android:layout_height="wrap_content"
+				android:text="@string/played_time" android:id="@+id/PlayedTime"
+				android:layout_alignParentLeft="true"
+				android:layout_gravity="center_vertical">				
+			</TextView>
+
+			<com.musicplayer.media.HorizontalSlider
+				android:id="@+id/progress" android:layout_width="fill_parent"
+				android:layout_height="38.0dip" android:progress="0"
+				android:secondaryProgress="0" android:progressDrawable="@drawable/seekbar_progress"
+				android:paddingRight="3dip" android:paddingLeft="3dip"
+				android:layout_weight="1" android:thumb="@drawable/seek_thumb"
+				android:thumbOffset="0dip" android:minHeight="38.0dip"
+				android:maxHeight="38.0dip" android:layout_centerInParent="true"
+				android:scaleType="centerInside" app:pressed_progressDrawable="@drawable/seekbar_progress_pressed"
+				app:pressed_minHeight="38.0dip" app:pressed_maxHeight="38.0dip"
+				app:pressed_thumb="@drawable/seek_thumb_pressed"
+				app:pressed_thumbOffset="2.0px"
+				xmlns:app="http://schemas.android.com/apk/res/com.musicplayer.media" />
+
+
+			<!-- <SeekBar android:id="@+id/seekBar" android:layout_width="wrap_content" 
+				android:layout_height="38.0dip" android:progress="0" android:secondaryProgress="0" 
+				android:progressDrawable="@drawable/seekbar_progress" android:paddingRight="5dip" 
+				android:paddingLeft="5dip" android:layout_weight="1" android:thumb="@drawable/seek_thumb" 
+				android:thumbOffset="0dip" android:minHeight="38.0dip" android:maxHeight="38.0dip" 
+				android:layout_centerInParent="true" android:scaleType="centerInside"/> -->
+
+			<!-- <SeekBar android:id="@+id/seekBar" android:layout_width="fill_parent" 
+				android:paddingRight="5dip" android:paddingLeft="5dip" android:layout_weight="1" 
+				android:layout_height="34px" android:layout_gravity="center_vertical" android:progressDrawable="@drawable/progress_horizontal" 
+				android:minHeight="38.0px" android:maxHeight="38.0px" android:thumb="@drawable/common_music_progress_indicator" 
+				android:thumbOffset="0.0px" style="\?ListTrackProgressBar" /> -->
+
+			<!-- Remaining time -->
+			<TextView android:textAppearance="?SmallText" android:text="@string/remaining_time" android:id="@+id/RemainingTime"
+				android:layout_width="30dp" android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:layout_gravity="center_vertical">
+			</TextView>
+
+			<!-- <ProgressBar android:id="@+id/progressbarBar" style="@android:style/Widget.ProgressBar.Horizontal" 
+				android:layout_below="@id/SongName" android:layout_toRightOf="@id/PlayedTime" 
+				android:layout_toLeftOf="@id/RemainingTime" android:layout_width="fill_parent" 
+				android:layout_height="wrap_content" android:layout_centerHorizontal="true" 
+				android:paddingLeft="5dip" android:paddingRight="5dip"></ProgressBar> -->
+
+		</LinearLayout>
+
+		<!-- Artist text -->
+		<TextView android:textAppearance="?SmallText" 
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:text="@string/artist_name" android:id="@+id/ArtistName"
+			android:layout_below="@id/StatusBar" 
+			android:paddingTop="2dip" android:paddingBottom="5dip"
+			android:gravity="center_horizontal">
+		</TextView>
+
+	</RelativeLayout>
+	<!-- End of Info Bar -->
+
+	<!-- Start of rating bar -->
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+		android:orientation="vertical" android:layout_alignParentBottom="true"
+		android:id="@+id/ratingBar" android:layout_marginBottom="2dp"
+		android:gravity="center" android:visibility="gone">
+		
+		<RatingBar android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_marginLeft="4dp"
+			android:layout_marginTop="3dp" android:id="@+id/song_rating"
+			android:numStars="5"/>
+			
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content"	 android:orientation="horizontal"
+			android:gravity="center">
+			<!-- facebook logo -->
+			<ImageView android:layout_height="wrap_content"
+				android:background="@drawable/facebook_button" android:scaleType="center"
+				android:layout_width="wrap_content" android:id="@+id/facebook_logo"
+				></ImageView>
+			
+			<!-- facebook like it button -->
+			<ImageView android:layout_height="wrap_content"
+				android:src="@drawable/likebutton" android:scaleType="center"
+				android:layout_width="wrap_content" android:id="@+id/facebook_likeit"
+				></ImageView>
+				
+		</LinearLayout>
+		
+	</LinearLayout>
+
+</RelativeLayout>

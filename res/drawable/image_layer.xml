@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:id="@+id/layer1">
+		<bitmap android:src="@drawable/album_art_bounder"
+			android:gravity="center" />
+	</item>
+	<item android:id="@+id/layer2" android:top="5dp" android:left="16dp"
+	android:bottom="4dp" android:right="4dp"
+		>
+		<bitmap android:id="@+id/bitmap1" android:src="@drawable/albumart_mp_unknown"
+			android:gravity="center" android:layout_width="wrap_content" android:layout_height = "wrap_content" />
+	</item>
+
+</layer-list>

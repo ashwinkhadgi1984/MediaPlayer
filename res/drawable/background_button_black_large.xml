@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/background_button_black_large_pressed"
+          android:state_pressed="true" android:layout_width="80dip" android:layout_height="80dip"/>
+    <item android:drawable="@drawable/background_button_black_large_normal"
+          android:state_focused="true"  android:layout_width="80dip" android:layout_height="80dip"/>
+    <item android:drawable="@drawable/background_button_black_large_normal" android:layout_width="80dip" android:layout_height="80dip"/>
+</selector>

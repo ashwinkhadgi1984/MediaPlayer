@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.musicplayer.media.ThemeListView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/theme_list"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000000"
+>
+</com.musicplayer.media.ThemeListView>

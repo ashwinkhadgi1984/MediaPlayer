@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources>
+
+ <style name="ActivityThemeBase" parent="@android:style/Theme.Black.NoTitleBar" />
+ 
+	<style name="Text" parent="@android:style/TextAppearance">
+		<item name="android:marqueeRepeatLimit">marquee_forever</item>
+		<item name="android:ellipsize">marquee</item>
+		<item name="android:singleLine">true</item>
+	</style>
+	
+	
+	
+	<style name="MediumText_White" parent="@style/Text">
+		<item name="android:textSize">18sp</item>
+		<item name="android:textColor">#FFFFFF</item>
+	</style>
+	
+	<style name="SmallText_White" parent="@style/Text">
+		<item name="android:textSize">14sp</item>
+		<item name="android:textColor">#FFFFFF</item>
+	</style>
+	
+	<style name="LargeText_Black" parent="@style/Text">
+		<item name="android:textSize">20sp</item>
+		<item name="android:textColor">#000000</item>
+	</style>
+	
+	<style name="MediumText_Black" parent="@style/Text">
+		<item name="android:textSize">18sp</item>
+		<item name="android:textColor">#000000</item>
+	</style>
+	
+	<style name="SmallText_Black" parent="@style/Text">
+		<item name="android:textSize">14sp</item>
+		<item name="android:textColor">#000000</item>
+	</style>
+	
+	<style name="LargeText_White" parent="@style/Text">
+		<item name="android:textSize">20sp</item>
+		<item name="android:textColor">#FFFFFF</item>
+	</style>
+	
+	
+	<!-- Theme Black -->
+	<style name="Theme_Black" parent="@style/ActivityThemeBase">
+		<item name="LargeText">@style/LargeText_White</item>
+		<item name="MediumText">@style/MediumText_White</item>
+		<item name="SmallText">@style/SmallText_White</item>
+		
+		<item name="background">@drawable/gradiant_box_black</item>
+		
+		<item name="background_button_small">@drawable/background_button_black_small</item>
+		<item name="background_button_large">@drawable/background_button_black_large</item>
+		
+		<item name="playlist_item_background">@drawable/background_black</item>
+				
+	</style> 
+	
+	
+	<!-- Theme White --> 
+	<style name="Theme_White" parent="@style/ActivityThemeBase">
+		<item name="LargeText">@style/LargeText_Black</item>
+		<item name="MediumText">@style/MediumText_Black</item>
+		<item name="SmallText">@style/SmallText_Black</item>
+		<item name="background">@drawable/gradiant_box_white</item>
+		
+		<item name="background_button_small">@drawable/background_button_white_small</item>
+		<item name="background_button_large">@drawable/background_button_white_large</item>
+		
+		<item name="playlist_item_background">@drawable/background_white</item>
+	</style>
+	
+</resources>

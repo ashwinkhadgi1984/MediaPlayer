@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, MediaPlayer!</string>
+    <string name="app_name">MusicPlayer</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="song_count">2/15</string>
+    <string name="song_name">In the End</string>
+    <string name="played_time">5.17</string>
+    <string name="remaining_time">-1.5</string>
+    <string name="artist_name">Michale kay</string>
+    <string name="theme">Themes</string>
+    <string name="playlist">Playlist</string>
+
+    
+</resources>
